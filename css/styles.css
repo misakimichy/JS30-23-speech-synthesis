@@ -1,0 +1,80 @@
+:root {
+    --gray: #e0e0e0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Open sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--gray);
+}
+
+.container {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+
+h1 {
+    width: calc(100% + 4rem);
+    margin: -2rem 0 2rem -2rem;
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 5px solid var(--gray);
+    font-size: 5rem;
+    font-weight: 100;
+    text-shadow: 3px 3px 0 var(--gray)
+}
+
+input, button, select, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 2rem;
+    border-radius: 1rem;
+    outline: 0;
+    border: 0;
+    display: block;
+}
+
+textarea {
+    background: white;
+    border: 3px solid var(--gray);
+    height: 20rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+    width: 45%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0px;
+}
+
+button:first-child {
+    margin-right: 2rem;
+}
+
+button:active {
+    top: 2px;
+}
