@@ -46,11 +46,15 @@ input, button, select, textarea {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 1rem;
     outline: 0;
     border: 0;
     display: block;
+}
+
+select {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
@@ -67,7 +71,7 @@ textarea {
 button {
     cursor: pointer;
     width: 45%;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 0px;
 }
 
