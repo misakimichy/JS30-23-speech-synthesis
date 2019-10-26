@@ -14,5 +14,18 @@
         dropdown.innerHTML = voiceOptions;
     };
 
+    const setVoice = (e) => {
+        msg.voice = voices.find(voice => voice.name === e.currentTarget.value);
+        cancel();
+    };
+
+    const cancel = (startOver = true) => {
+        speechSynthesis.cancel();
+        if (startOver) {
+            speechSynthesis.speak(msg);
+        }
+    };
+
     speechSynthesis.addEventListener('voiceschanged', populateVoices);
+    dropdown.addEventListener('change', setVoice);
 }());
