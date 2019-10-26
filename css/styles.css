@@ -75,10 +75,10 @@ button {
     margin-bottom: 0px;
 }
 
-button:first-child {
-    margin-right: 2rem;
+button:active {
+    transform: translate(2px, 2px);
 }
 
-button:active {
-    top: 2px;
+button:first-child {
+    margin-right: 2rem;
 }
