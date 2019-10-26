@@ -9,23 +9,30 @@
     
     const populateVoices = (e) => {
         voices = e.currentTarget.getVoices();
-        const voiceOptions = voices.map(voice =>
+        dropdown.innerHTML = voices.map(voice =>
             `<option value="${voice.name}"> ${voice.name} (${voice.lang})</option>`).join('');
-        dropdown.innerHTML = voiceOptions;
     };
 
     const setVoice = (e) => {
         msg.voice = voices.find(voice => voice.name === e.currentTarget.value);
-        cancel();
+        handleStop();
     };
 
-    const cancel = (startOver = true) => {
+    const handleStop = (startOver = true) => {
         speechSynthesis.cancel();
         if (startOver) {
             speechSynthesis.speak(msg);
         }
     };
 
+    const setOption = (e) => {
+        msg[e.currentTarget.name] = e.currentTarget.value;
+        handleStop();
+    };
+
     speechSynthesis.addEventListener('voiceschanged', populateVoices);
     dropdown.addEventListener('change', setVoice);
+    options.forEach(option => option.addEventListener('change', setOption));
+    speakButton.addEventListener('click', handleStop);
+    stopButton.addEventListener('click', () => handleStop(false));
 }());
